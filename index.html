@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <title>Ciphers — Nguyễn Thị Xuân Phương</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Mã hóa cổ điển</h1>
+    <label for="cipher">Chọn phương pháp:</label>
+    <select id="cipher">
+      <option value="caesar">Caesar</option>
+      <option value="affine">Affine</option>
+      <option value="perm">Columnar Permutation</option>
+      <option value="vigenere">Vigenère</option>
+      <option value="playfair">Playfair</option>
+    </select>
+
+    <label for="mode">Chế độ:</label>
+    <select id="mode">
+      <option value="encrypt">Mã hóa</option>
+      <option value="decrypt">Giải mã</option>
+    </select>
+
+    <label for="text">Text (plaintext / ciphertext):</label>
+    <textarea id="text" rows="5"></textarea>
+
+    <div id="key-area">
+      <label for="key">Khóa:</label>
+      <input id="key" type="text" />
+      <div id="affine-params" class="hidden">
+        <label for="a">a:</label>
+        <input id="a" type="number" value="5" />
+        <label for="b">b:</label>
+        <input id="b" type="number" value="8" />
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button id="run">Thực hiện</button>
+      <button id="clear">Xóa</button>
+    </div>
+
+    <label for="output">Kết quả:</label>
+    <textarea id="output" rows="5" readonly></textarea>
+
+    <div class="notes">
+      <strong>Ghi chú:</strong>
+      <ul>
+        <li>Chỉ xử lý chữ cái A-Z; chữ thường được chuyển thành chữ hoa; ký tự khác giữ nguyên (trừ một số thuật toán như Playfair xử chữ J→I).</li>
+        <li>Với Affine: đảm bảo a và 26 nguyên tố cùng nhau.</li>
+        <li>Bài tập được thực hiện bởi NTXPhuong</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
